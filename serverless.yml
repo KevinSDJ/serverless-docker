@@ -1,0 +1,18 @@
+service: KevinSDJServerless
+
+
+provider:
+  name: aws
+  stage: api
+  runtime: nodejs12.x
+
+functions:
+  holamundo:
+    handler: index.holamundo
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true
+plugins:
+  - serverless-offline
